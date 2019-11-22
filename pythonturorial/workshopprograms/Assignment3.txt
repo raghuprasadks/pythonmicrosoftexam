@@ -1,0 +1,8 @@
+1.data = [100,50,30,20,500]
+a. Find the sum (without using
+built-in function) and average of 
+the elements of a list
+b. Find the maximum without using 
+max() built-in method
+c. Find the minimum without using
+min() built-in method 
