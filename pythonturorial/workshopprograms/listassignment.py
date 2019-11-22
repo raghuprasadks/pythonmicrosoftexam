@@ -1,4 +1,5 @@
-data = [100,50,30,20,500]
+#data = [100,50,30,20,500]
+data = eval(input("Enter a list"))
 sum1 = sum(data)
 len1 = len(data)
 avg = sum1/len1
