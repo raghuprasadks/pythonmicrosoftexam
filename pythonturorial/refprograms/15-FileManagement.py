@@ -1,4 +1,23 @@
+
 '''
+https://www.tutorialsteacher.com/python/python-read-write-file
+
+
+Access Modes	Description
+r	Opens a file for reading only.
+rb	Opens a file for reading only in binary format.
+r+	Opens a file for both reading and writing.
+rb+	Opens a file for both reading and writing in binary format.
+w	Opens a file for writing only.
+wb	Opens a file for writing only in binary format.
+w+	Opens a file for both writing and reading.
+wb+	Opens a file for both writing and reading in binary format.
+a	Opens a file for appending.
+ab	Opens a file for appending in binary format.
+a+	Opens a file for both appending and reading.
+ab+	Opens a file for both appending and reading in binary format.
+
+
 Mode	Description
 'r'	Open a file for reading. (default)
 'w'	Open a file for writing. Creates a new file if it does not exist or truncates the file if it exists.
@@ -8,48 +27,130 @@ Mode	Description
 'b'	Open in binary mode.
 '+'	Open a file for updating (reading and writing)
 '''
-def main():
-    f= open("dhanyatest.txt","+")
-    for i in range(50,61):
-        f.write("This is new line %d\r\n" % (i))      
-    f.close()
-    #Open the file back and read the contents
-    f=open("dhanyatest.txt", "+")
-    if(f.mode == 'r'):
-        contents =f.read()
-        print(contents)
-   #or, readlines reads the individual line into a list
-   #fl =f.readlines()
-   #for x in fl:
-   #print x
-    f.close()
-if __name__== "__main__":
-  main()
-  
+
+
+#Writing to a File
+
+f=open("D:\myfile.txt","w")
+f.write("Hello! Learn Python from Kaushalya.tech.")
+f.close()
+
+
+lines=["Hello world.\n", "Welcome to TutorialsTeacher.\n"]
+f=open("D:\myfile.txt","w")
+f.writelines(lines)
+f.close()
+
+
 #Open a file in append mode.
 f= open("filedemo13112019demo.txt","a")
 print(f)    
 f.write('I am learning python\n')
 f.write('python is easy to learn\n')
 f.close()
- 
-#file in write mode.
-f= open("filedemo13112019demo.txt","w")    
-f.write('I am learning python\n')
-f.write('python is easy to learn\n')
+
+#Reading from a File
+'''
+Three different methods are provided to read data from file.
+
+readline(): reads the characters starting from the current reading position up to a newline character.
+read(chars): reads the specified number of characters starting from the current position.
+readlines(): reads all lines until the end of file and returns a list object.
+'''
+
+f=open("D:\myfile.txt","r")
+line=f.readline()
+print(line)
 f.close()
 
-#Reading a file r mode.
-f= open("filedemo13112019demo.txt","r")    
-print(f.read())
+
+f=open("D:\myfile.txt","r")
+line=f.readline()
+while line!='':
+    print(line)
+    line=f.readline()
+'''
+File iterator
+The file object has an inbuilt iterator. The following program reads the given file line 
+by line until StopIteration is raised, i.e. the end of the file is reached.
+'''
+
+
+f=open("D:\myfile.txt","r")
+while True:
+        try:
+            line=next(f)
+            print (line)
+        except StopIteration:
+            break
 f.close()
 
-#Reading line by line
-f= open("filedemo13112019demo.txt","r")    
-lines = f.readlines()
-for l in lines:
-    print(l)
+# using for loop
+f=open("D:\myfile.txt","r")
+for line in f:
+    print(line)
 f.close()
+
+
+#Append and Read a File
+
+f=open("D:\myfile.txt","a+")
+f.write("Hello! Learn Python on TutorialsTeacher.")
+line=f.readline()
+print(line)
+f.close()
+
+
+#seek() method
+
+'''
+To read or write at a specific position, use the seek() function to set the 
+current read/write position.
+
+f.seek(offset, from)
+
+Here, the from parameter takes the following values:
+
+0 : offset calculated from the beginning
+1 : offset calculated from the current position
+2 : offset calculated from the end
+
+
+
+file.tell() - Returns the file's current position
+'''
+
+f=open("D:\myfile.txt","r+")
+f.seek(6,0)
+currposition = f.tell()
+print('current position',currposition)
+lines=f.readlines()
+for line in lines:
+    print(line)
+f.close()
+
+f=open("D:\myfile.txt","r+")
+f.seek(6,0)
+content=f.read()
+print(content)
+f.close()
+
+
+#Write to a Binary File
+f=open("binfile.bin","wb")
+num=[5, 10, 15, 20, 25]
+arr=bytearray(num)
+f.write(arr)
+f.close()
+
+#Reading a Binary File
+
+f=open("binfile.bin","rb")
+num=list(f.read())
+print (num)
+f.close()
+  
+
 
 #Sum of numbers in a file
 f= open("samplefile.txt","r")    
@@ -65,34 +166,15 @@ for l in lines:
 print('sum : ',sum)
 f.close()
 
-#https://www.tutorialsteacher.com/python/python-read-write-file
-f= open("dhanyatest1.txt","a+")
-f.write('testing')
-f.seek(0,0)
-contents =f.read()
-print(contents)
-print(f.mode)
-f.close()
+#with open
 
-f=open("binfile.bin","w+b")
-num=[5, 10, 15, 20, 25]
-arr=bytearray(num)
-f.write(arr)
-f.seek(0,0)
-print(list(f.read()))
-f.close()
-f=open("binfile.bin","w+b")
-num=['r', 'a']
-arr=bytearray(str(num),'utf-8')
-f.write(arr)
-f.seek(0,0)
-print((f.read().decode()))
-f.close()
+with open('hello.txt','w') as f:
+    f.write('Hello World') 
 
-string = "Python is interesting."
-# string with encoding 'utf-8'
-arr = bytearray(string, 'utf-8')
-print(arr)
+with open('hello.txt','r') as f:
+    data = f.readline()
+    print(data)
+
 
 
 

@@ -1,0 +1,12 @@
+Assignment
+
+str="India got its independence in 1947 . \ 
+India became republic in 1956. Article 370 is abolished \
+in 2019 .
+
+1. Find total number of words in above sentence
+2. Count the number of vowels
+3. Sum the number of digits
+4. Check the occurance of 'India' in the above sentence
+
+*******Geeks********

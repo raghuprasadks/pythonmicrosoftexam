@@ -43,5 +43,28 @@ while(True):
     else:
         print("Please Enter Choice")
     print("Current Directory:",tele)
+    
+    
+'''
+Alternative way
+'''
+tele={}
+n = int(input("How many friends you want to add"))
+
+for i in range(n):
+    name = input("Enter name")
+    num  = int(input("Enter number"))
+    tele[name] = num
+print('My best friends list' ,tele)
+
+
+
+
+
+
+
+
+
+    
 
 

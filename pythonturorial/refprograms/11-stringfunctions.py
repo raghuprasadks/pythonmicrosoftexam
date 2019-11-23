@@ -18,7 +18,7 @@ print ("x" not in var2)
 #Formatting -
 name = 'guru'
 number1 = 99
-number2 = 99.5
+number2 = 99.556
 print("name",name,"age is ",number1)
 print("name is %s age is %d. Amount is %10.2f" %(name,number1,number2))
 #Concatenate

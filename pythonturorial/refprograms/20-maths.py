@@ -15,7 +15,7 @@ print('Factorial ',math.factorial(4))
 # Remainder
 print('remainder ',math.fmod(10, 5))
 #Not a number
-print('Is a number ',math.isnan(10))
+print('Is a number ',math.isnan(4))
 # pi value
 print('value of pi', math.pi)
 
