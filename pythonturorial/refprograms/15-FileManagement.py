@@ -32,7 +32,7 @@ Mode	Description
 #Writing to a File
 
 f=open("D:\myfile.txt","w")
-f.write("Hello! Learn Python from Kaushalya.tech.")
+f.write("Hello! Learn Python from Kaushalya.tech.Python is fun to code")
 f.close()
 
 
@@ -43,8 +43,8 @@ f.close()
 
 
 #Open a file in append mode.
-f= open("filedemo13112019demo.txt","a")
-print(f)    
+f= open("D:\myfile.txt","a")
+#print(f)    
 f.write('I am learning python\n')
 f.write('python is easy to learn\n')
 f.close()
@@ -57,6 +57,12 @@ readline(): reads the characters starting from the current reading position up t
 read(chars): reads the specified number of characters starting from the current position.
 readlines(): reads all lines until the end of file and returns a list object.
 '''
+
+f=open("D:\myfile.txt","r")
+content=f.read()
+print(content)
+f.close()
+
 
 f=open("D:\myfile.txt","r")
 line=f.readline()
@@ -148,6 +154,15 @@ f.close()
 f=open("binfile.bin","rb")
 num=list(f.read())
 print (num)
+f.close()
+
+
+f=open("binfile1.bin","w+b")
+num=['r', 'a']
+arr=bytearray(str(num),'utf-8')
+f.write(arr)
+f.seek(0,0)
+print((f.read().decode()))
 f.close()
   
 
