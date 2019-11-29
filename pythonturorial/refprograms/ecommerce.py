@@ -43,7 +43,7 @@ class Customer():
         
         self.customername = customername
         self.telephonenumber = telephonenumber
-        self.addree = address
+        self.address = address
     def setcustomerid(self,customerid):
         self.customerid = customerid        
     def getcustomerid(self):
@@ -112,4 +112,7 @@ while (True):
         if (custtype == 'P'):
             prvcust = PrivilegedCustomer(name,tele,addr,cardtype)
             custlist.append(regcust)
-        
+    if (choice == 3):
+        for c in custlist:
+            #customername,telephonenumber,address
+            print (" Name : {} , telephone number : {} , Address : {}".format(c.customername,c.telephonenumber,c.address))
