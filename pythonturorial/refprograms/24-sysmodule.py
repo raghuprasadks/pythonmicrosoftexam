@@ -20,7 +20,7 @@ print("0 argument ",sys.argv[0])
 user_input = sys.stdin.readline()
 print("Input : " + user_input)
 
-#sys.exit(1)
+sys.exit(1)
 
 print(sys.copyright)
 

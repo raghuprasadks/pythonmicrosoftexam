@@ -3,3 +3,4 @@ https://www.w3resource.com/python
 https://www.gratisexam.com/
 https://www.programiz.com/python-programming/precedence-associativity
 http://www.mathcs.emory.edu/~valerie/courses/fall10/155/resources/op_precedence.html
+https://realpython.com/quizzes/

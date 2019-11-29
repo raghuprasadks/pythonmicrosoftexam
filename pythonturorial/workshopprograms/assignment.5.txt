@@ -1,0 +1,20 @@
+Hello world.
+Welcome to TutorialsTeacher.
+Hello! Learn Python on TutorialsTeacher.
+
+
+pip install 
+
+1. Create a class called account
+ having following method
+openAccount(self,name,email,mobile,id proof)
+this should return the account number
+
+deposit(self,acctno,amout)
+balance should be updated after every deposit
+
+withdraw(self,acctno,amout)
+balance should be updated after every withdraw
+
+checkbalance(self,acctno)
+display balance

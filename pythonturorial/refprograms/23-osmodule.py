@@ -36,3 +36,4 @@ print('Operating system name ', os.name)
 print('Absolute path ', os.path.abspath('.'))
 print('Files and directories ' ,os.listdir('.')) 
 
+
