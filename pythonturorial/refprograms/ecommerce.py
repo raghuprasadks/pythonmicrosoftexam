@@ -1,5 +1,4 @@
 
-
 counter = 0
 import random
 class Address():    
@@ -114,5 +113,7 @@ while (True):
             custlist.append(regcust)
     if (choice == 3):
         for c in custlist:
+            
+            print('instance ' ,isinstance(c,'RegularCustomer') )
             #customername,telephonenumber,address
             print (" Name : {} , telephone number : {} , Address : {}".format(c.customername,c.telephonenumber,c.address))
