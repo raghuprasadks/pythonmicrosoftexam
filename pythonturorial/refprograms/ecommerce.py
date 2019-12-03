@@ -1,6 +1,8 @@
 
 counter = 0
 import random
+
+addrlist = []
 class Address():    
     def __init__(self,addressline,city,zipcode,state):
         #self.addressline = addressline
@@ -42,12 +44,33 @@ class Customer():
         
         self.customername = customername
         self.telephonenumber = telephonenumber
-        self.address = address
+        if (self.validateAddress(address) > 0):
+            self.address = address
+            addrlist.append(self.address)
+            
+        else:
+            print('duplicate address')
+            
     def setcustomerid(self,customerid):
         self.customerid = customerid        
     def getcustomerid(self):
         return self.customerid
     
+    def setcustomername(self,customername):
+        self.customername = customername        
+    def getcustomername(self):
+        return self.customername
+    
+    def validateAddress(self,address):
+        #addressline,city,zipcode,state
+        addressId = 0
+        for a in addrlist:
+            if (a.addressline == address.addressline and a.city == address.city and a.zipcode == address.zipcode and a.state == address.state):
+                addressId = 0
+                #pass
+        
+        addressId = address.addressid
+        return addressId
         
     
 
@@ -85,8 +108,8 @@ custlist = []
 while (True):
     print('**** Easy Shop Retail Application****' )
     
-    choice = int(input ("Enter operation you want to perform 1- Add, 2 - Modify,3-View All customers,10 - Exit"))
-    if (choice == 10):
+    choice = int(input ("Enter operation you want to perform 1- Add, 2 - Modify,3-View All customers,6 - Exit"))
+    if (choice == 6):
         break
     
     if (choice == 1):
@@ -110,10 +133,50 @@ while (True):
              custlist.append(regcust)
         if (custtype == 'P'):
             prvcust = PrivilegedCustomer(name,tele,addr,cardtype)
-            custlist.append(regcust)
+            custlist.append(prvcust)
     if (choice == 3):
         for c in custlist:
             
-            print('instance ' ,isinstance(c,'RegularCustomer') )
+            #print('instance ' ,isinstance(c,RegularCustomer) )
             #customername,telephonenumber,address
-            print (" Name : {} , telephone number : {} , Address : {}".format(c.customername,c.telephonenumber,c.address))
+            print (" Name : {} , telephone number : {} , Address-- city : {}, zipcode : {}".format(c.customername,c.telephonenumber,c.address.city,c.address.zipcode))
+            
+    if (choice == 4):
+        for c in custlist:
+            
+            print('instance ' ,isinstance(c,RegularCustomer) )
+            if (isinstance(c,RegularCustomer)):
+            #customername,telephonenumber,address
+                print (" Name : {} , telephone number : {} , Address : {}".format(c.customername,c.telephonenumber,c.address))
+                
+    if (choice == 5):
+        for c in custlist:
+            
+            print('instance ' ,isinstance(c,PrivilegedCustomer) )
+            if (isinstance(c,PrivilegedCustomer)):
+            #customername,telephonenumber,address
+                print (" Name : {} , telephone number : {} , Address : {}".format(c.customername,c.telephonenumber,c.address))
+                
+    if (choice == 2):
+        echoice = input('To Modify - a - Customer Name , b - customer contact')
+        if (echoice == 'a'):
+            oname= input('Enter original and new name ')
+            nname= input('Enter new name ')
+            for c in custlist:
+                if(c.customername == oname):
+                    #c.customername = nname
+                    c.setcustomername(nname)
+            
+            for c in custlist:
+                print (c.getcustomername())
+                
+        if (echoice == 'c'):
+            oname= input('Enter customer name ')
+            ncity= input('Enter new city ')
+            nzipcode= input('Enter new zip code ')
+            for c in custlist:
+                if(c.customername == oname):
+                    #c.customername = nname
+                    c.address.city = ncity
+                    c.address.zipcode = nzipcode
+                    
