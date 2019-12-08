@@ -31,19 +31,19 @@ Mode	Description
 
 #Writing to a File
 
-f=open("D:\myfile.txt","w")
+f=open("myfile.txt","w")
 f.write("Hello! Learn Python from Kaushalya.tech.Python is fun to code")
 f.close()
 
 
 lines=["Hello world.\n", "Welcome to TutorialsTeacher.\n"]
-f=open("D:\myfile.txt","w")
+f=open("myfile.txt","w")
 f.writelines(lines)
 f.close()
 
 
 #Open a file in append mode.
-f= open("D:\myfile.txt","a")
+f= open("myfile.txt","a")
 #print(f)    
 f.write('I am learning python\n')
 f.write('python is easy to learn\n')
@@ -58,19 +58,17 @@ read(chars): reads the specified number of characters starting from the current 
 readlines(): reads all lines until the end of file and returns a list object.
 '''
 
-f=open("D:\myfile.txt","r")
+f=open("myfile.txt","r")
 content=f.read()
 print(content)
 f.close()
 
-
-f=open("D:\myfile.txt","r")
+f=open("myfile.txt","r")
 line=f.readline()
 print(line)
 f.close()
 
-
-f=open("D:\myfile.txt","r")
+f=open("myfile.txt","r")
 line=f.readline()
 while line!='':
     print(line)
@@ -92,7 +90,7 @@ while True:
 f.close()
 
 # using for loop
-f=open("D:\myfile.txt","r")
+f=open("myfile.txt","r")
 for line in f:
     print(line)
 f.close()
@@ -100,7 +98,7 @@ f.close()
 
 #Append and Read a File
 
-f=open("D:\myfile.txt","a+")
+f=open("myfile.txt","a+")
 f.write("Hello! Learn Python on TutorialsTeacher.")
 line=f.readline()
 print(line)
@@ -189,14 +187,88 @@ with open('hello.txt','w') as f:
 with open('hello.txt','r') as f:
     data = f.readline()
     print(data)
+    
+'''
+1. In a small firm employee numbers are given in serial numerical order 
+that is 1, 2, 3, etc. Create a file of employee data with following 
+information: employee number, name, sex, gross salary. 
+If more employees join, append their data to the file. 
+If an employee with serial number 25 (say) leaves, 
+delete the record by making gross salary 0. If some employee’s gross 
+salary increases, retrieve the record and update the salary. 
+Write a program to implement the above operations. 
+'''
+
+f = open("employee.txt","a")
+eno = "2 \t"
+name = 'satvik \t'
+sex = 'M \t'
+gsalary = str(19900.00)
+#data = eno\t name\t sex\t gsalary
+f.write(eno)
+f.write (name)
+f.write(sex)
+f.write(gsalary)
+f.write("\r")
+
+f.close()
+emplist = []
+nemployees = int(input("Enter number of employees "))
+for i in range (nemployees):
+    edata = input ('Enter details of employee using comma seperator.')
+    emplist.append(edata)
+
+f = open("employee.txt","w")
+for data in emplist:
+    f.write('%s\n' %data)
+f.close()
+f = open("employee.txt","r+")
+empcode = input("enter employee code to update")
+newemplist = []
+for data in f:
+    ecode, name,sex,gsalary = data.split(',')
+    print(ecode,gsalary)
+    if (empcode == ecode):
+        print('matched empcode ',empcode)
+        gsalary = 0    
+    newdata = '{},{},{},{}'.format(ecode,name,sex,gsalary)
+    newemplist.append(newdata)    
+f.close()
+
+f = open("employee.txt","w")
+for data in newemplist:
+    f.write('%s\n' %data)
+f.close()
 
 
 
 
+'''
+l = f.readline()
+while (l!=''):
+    print(type(l))
+    ecode, name,sex,gsalary = l.split(',')
+    print(ecode,gsalary)
+    if (empcode == ecode):
+        print('matched empcode ',empcode)
+        gsalary = 0
+        updstr=''
+        updstr = ecode+','+name+','+sex+','+str(gsalary)
+        f.write(updstr)
+    
+    l= f.readline()
+f.close()
+'''    
 
 
 
 
+#data = eno\t name\t sex\t gsalary
 
-
+'''
+f = open("employee.txt","w")
+for li in emplist:
+    f.write('%s\n' %li)
+f.close()
+'''
 
