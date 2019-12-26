@@ -21,10 +21,11 @@ def create_connection(db_file):
  
  
 if __name__ == '__main__':
-    create_connection(r"pythonsqlite.db")
+    create_connection("demosqlite.db")
     
 '''
 2. creates an SQLite database in the memory.
+'''
 '''
 def create_connection():
     """ create a database connection to a database that resides
@@ -44,6 +45,7 @@ def create_connection():
 if __name__ == '__main__':
     create_connection()
 
+'''
 '''
 3. Creating tables
 '''
@@ -82,7 +84,7 @@ def create_table(conn, create_table_sql):
  
  
 def main():
-    database = r"pythonsqlite.db"
+    database = r"demosqlite.db"
  
     sql_create_projects_table = """ CREATE TABLE IF NOT EXISTS projects (
                                         id integer PRIMARY KEY,
@@ -172,7 +174,7 @@ def create_task(conn, task):
  
  
 def main():
-    database = r"pythonsqlite.db"
+    database = r"demosqlite.db"
  
     # create a database connection
     conn = create_connection(database)

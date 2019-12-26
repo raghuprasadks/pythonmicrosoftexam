@@ -5,12 +5,19 @@ from tkinter import *
 
 # create root window
 
+'''
+def test(self):
+    print('left button clicked')
+'''    
 root = Tk()
 #give a title for root window
 root.title("My Frame")
 
 #create a frame as child to root window
 f = Frame(root,height=400,width = 500,bg="yellow", cursor="cross")
+'''
+f.bind('<Button-1>', test)
+'''
 f.pack()
 root.mainloop()
 
@@ -168,7 +175,7 @@ class MyButton():
         self.f.pack()
         
         self.b1=Button(self.f,text='Click Me',width = 20,height=5,command=self.buttonClick)
-        self.b2=Button(self.f,text='Close',width = 20,height=5,command=quit)
+        self.b2=Button(self.f,text='Close',width = 20,height=5,command=root.destroy)
         self.b1.grid(row=0,column=1)
         self.b2.grid(row=0,column=2)
         
@@ -252,6 +259,7 @@ class Mycheck():
         x = self.var1.get()
         y = self.var2.get()
         z = self.var3.get()
+        print('value of x ',x)
         
         str=''
         if (x==1):
@@ -285,7 +293,7 @@ class RadioButtonDemo():
         self.c1.pack()
         self.c1.place(x=50,y=50)
     
-        self.c2 = Radiobutton(self.f,bg='yellow',fg='green',text='Python',variable=self.var,value=2,command=self.display)
+        self.c2 = Radiobutton(self.f,bg='yellow',fg='green',text='Female',variable=self.var,value=2,command=self.display)
         self.c2.pack()
         self.c2.place(x=100,y=50)
     
@@ -306,3 +314,41 @@ class RadioButtonDemo():
 root = Tk()
 mc = RadioButtonDemo(root)
 root.mainloop()
+
+
+from tkinter import *
+#import tkMessageBox
+#import tkinter
+
+top = Tk()
+CheckVar1 = IntVar()
+#CheckVar1 = 1
+CheckVar2 = IntVar()
+C1 = Checkbutton(top, text = "Music", variable = CheckVar1, \
+                 onvalue = 1, offvalue = 0, height=5, \
+                 width = 20)
+C1.select()
+C2 = Checkbutton(top, text = "Video", variable = CheckVar2, \
+                 onvalue = 'raghu', offvalue = 'satvik', height=5, \
+                 width = 20)
+C1.pack()
+C2.pack()
+top.mainloop()
+
+
+from tkinter import *
+#import tkMessageBox
+#import Tkinter
+
+top = Tk()
+
+Lb1 = Listbox(top,selectmode=EXTENDED)
+Lb1.insert(1, "Python")
+Lb1.insert(2, "Perl")
+Lb1.insert(3, "C")
+Lb1.insert(4, "PHP")
+Lb1.insert(5, "JSP")
+Lb1.insert(6, "Ruby")
+
+Lb1.pack()
+top.mainloop()

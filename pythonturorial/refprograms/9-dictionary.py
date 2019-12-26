@@ -24,6 +24,7 @@ type(keys)
 #values 
 print("Values ", tele.values())
 values = tele.values()
+type(values)
 for v in values:
     print(v)
     print (type(v))    
@@ -232,6 +233,7 @@ for i in range (5):
   mobile = input("Enter mobile")
   phonedict[name] = mobile
 print("Contact details of my five friends",phonedict)
+
 while(True):
     choice = input ("Do you want to add some more friends")
     if (choice =="Yes"):
@@ -240,9 +242,78 @@ while(True):
         phonedict[name] = mobile
     else:
         break
+
 delfriend = input ("Enter the name of your friend for deletion")
+skey = ''
 for key,value in phonedict.items():
     if (delfriend ) == key:
-        del phonedict[key] 
-        print('Deleted ' , key)
+        skey = key
+        break
+
+del phonedict[key]
+
 print('latest phone list',phonedict)
+
+'''
+https://www.geeksforgeeks.org/python-merging-two-dictionaries/
+Merging two Dictionaries
+'''
+# 1. Using the method update()
+
+# Python code to merge dict using update() method 
+def Merge(dict1, dict2): 
+	return(dict2.update(dict1)) 
+	
+# Driver code 
+dict1 = {'a': 10, 'b': 8} 
+dict2 = {'d': 6, 'c': 4} 
+
+# This return None 
+print(Merge(dict1, dict2)) 
+
+# changes made in dict2 
+print(dict2) 
+
+# 2. Using ** in Python
+
+# Python code to merge dict using a single 
+# expression 
+def Merge(dict1, dict2): 
+	res = {**dict1, **dict2} 
+	return res 
+	
+# Driver code 
+dict1 = {'a': 10, 'b': 8} 
+dict2 = {'d': 6, 'c': 4} 
+dict3 = Merge(dict1, dict2) 
+print(dict3) 
+
+dictnames={"names":["Kohli","ABD","KL Rahul","Bumrah","Maxwell"]}
+dictruns={"runs":[129,899,7999,15,20]}
+for k,v in dictruns.items():
+    print (k,v)
+    maxruns = max(v)
+    playerindex = v.index(maxruns)
+
+print("maximum runs ",maxruns)
+print("player index ",playerindex)
+
+v = dictnames["names"]
+print(v)
+name  = v[playerindex]
+print(name)
+
+results = []
+desc = ['name','maths']
+results.append(desc)
+
+print(results)
+
+noofstudents = int(input("enter no of students"))
+for n in range (noofstudents):
+    marks=[]
+    name = input("Enter name of the student")
+    mmarks = int(input("Enter maths marks"))
+    marks.append(name)
+    marks.append(mmarks)
+    results.append(marks)

@@ -78,3 +78,34 @@ k1 = re.findall(r"^\w+", xx)
 k2 = re.findall(r"^\w+", xx, re.MULTILINE)
 print(k1)
 print(k2)
+
+'''
+Regular expressions Core python Nageshwara Rao
+'''
+# 1. Raw String
+statement = "This is a line. \n This will come in new line"
+print(statement)
+# With raw string \n does not having special meaning. It is treated as just a letter
+
+statement = r"This is a line. \n This will come not come in new line with raw string option"
+print(statement)
+
+# 2. Compile and run. Here m represents starting letter of a
+#word with 3 characters.Other Characters are A-Z,a-z,0-9
+
+import re
+prog = re.compile(r'm\w\w')
+str = 'cat mat bat rat'
+result = prog.search(str)
+print(result.group())
+
+# Alternatively compilation is not required when we use search directly
+# Search will return the first matching string
+
+import re
+str = 'man sun mop run'
+result = re.search(r'm\w\w',str)
+if (result):
+    print (result.group())
+
+
