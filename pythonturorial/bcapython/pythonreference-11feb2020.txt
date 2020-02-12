@@ -1,0 +1,66 @@
+Relational operators >,>=,<=,!=,==
+Assignment , =
+
+logical operator - and or not
+
+bitwise operators -
+
+data structures
+
+- list,dictionary,tuple,set,string manipulation
+- object oriented programming
+- exception handling
+- file management
+
+http://www.kaushalya.tech/
+
+[]
+<class 'list'>
+
+ [10, 20, 30, 40]
+
+1. Get a list as user input and find following with out using built
+in function such as max,min,len
+a. Find the maximum and minimum element of a given list
+b. Find the sum of elements of a given list
+c. Find the average of the given list
+d. Search for a given element
+
+data=[5,2,8,9,14,20]
+
+1. Create a telephone directory of 
+five of your best friends by getting user
+inputs
+a. Add two more friends to it
+b. Delete a friend named 'ravi'
+c. update mobile number of 'raju'
+
+2. 
+info= "I am learning python.Python is easy to learn.It has lot of usages"
+
+a. Find out the number of occurance of the word 'python'
+b. Find the count of words in the info
+c. Replace learn with earn
+d. Find the number of titles
+e. Find the number of digits
+
+{'raghu': 9845547471, 'ravi': 494949494, 'raja': 40404004}
+
+
+class - 
+
+Calculator
+
+add(n1,n2)
+sub(n1,n2)
+div(n1,n2)
+mul(n1,n2)
+
+
+
+
+
+
+
+
+

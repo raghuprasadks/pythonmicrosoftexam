@@ -20,8 +20,14 @@ double(10)
 double = lambda x: x * 2
 # Output: 10
 print(double(5))
-#Filter
+
+#regular way
 my_list = [1, 5, 4, 6, 8, 11, 3, 12]
+evennolist = []
+for n in my_list:
+    if (n%2 == 0):
+        evennolist.append(n)
+#Filter
 new_list = list(filter(lambda x: (x%2 == 0) , my_list))
 # Output: [4, 6, 8, 12]
 print(new_list)

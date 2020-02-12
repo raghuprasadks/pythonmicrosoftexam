@@ -2,6 +2,7 @@
 #https://www.programiz.com/python-programming/tuple
 #https://www.geeksforgeeks.org/tuples-in-python/
 months =('Jan','Feb','Mar','Apr')
+#months[1]="February"
 print("Tuple months :",months)
 numbers =(1,2,3,4,5,6)
 print("Tuple numbers :",numbers)
@@ -78,8 +79,6 @@ a=(5,5)
 b=(5,5)
 if (a>b):
     print("a is bigger")
-elif (b==a):
-    print('a is equal to b')
 else:
     print("b is bigger")
 
@@ -114,8 +113,8 @@ print(len(numberst))
 #REVA Questions
 tuple1 = (10,"Hello",10.5,10+5j,'a',"Hello",10)
 #valid functions
-tuple1.index(10.5)
-tuple1.count("Hello")
+print(tuple1.index(10.5))
+print(tuple1.count("Hello"))
 
 #invalid functions
 tuple1.append(10)

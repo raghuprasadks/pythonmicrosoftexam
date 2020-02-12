@@ -1,0 +1,80 @@
+Datatypes
+operators
+input/output
+control statements
+loops
+file
+data structures - List,Tuples,dictionary,set
+object oriented programming
+exception handling
+
+python
+- high level programming language
+- object oriented programming
+- multipurpose
+different os - cross platform
+dynamic binding
+scripting - interpreted
+gUI
+open source
+free software
+
+IDLE
+REPL - Read,Evaluate,print and loop
+
+4 datatypes - int,float,string and bool
+int age=30;
+age = 30
+type(age)
+class int
+
+list - []
+evennumber = 
+
+0,1,2,3,4
+[2,4,6,8,10]
+,-4,-3,-2,-1
+
+tuple
+days=('Monday','Tuesday')
+
+dictionary
+mobiledictionary={'raghu':9845547471,'ranga':939393993,'raghu':9845547472}
+mobiledictionary['raghu']
+
+set
+oddnumber = {3,5,7}
+
+Operators
+Arithmetic operators - +,-,*,/,%,//
+9/2 - 4.5
+9//2 - 4
+Relational - >,>=,<,<=,==,!=
+Logical - and, or, not
+
+www.kaushalya.tech
+
+print 2's table forward and reverse
+2 X 1 = 2
+2 X 2 = 4
+6
+8
+10
+...
+20
+20
+18
+...
+2
+
+1. Print prime numbers between 10 to 20
+2. Print fibonacci series for given term
+3. Find the sum of digits of a given number
+4. Find the electricity bill to be paid by you
+based on the units consumed as per
+the details given below
+first 100 units - 2 rupees/unit
+between 101 to 200 units - 3 rupees/unit
+between 201 to 300 units - 4 rupees/unit
+above 301 - 5 rupees/unit
+5. Reverse a given number

@@ -1,12 +1,10 @@
 #with out expection handling
 
-check = input('Enter data')
-print ('check ',check)
 n = int(input('Enter a number to validate division by zero'))
 
 div = 100/n
 
-print('result is ',div)
+print('%5.2f result is '%(div))
 
 
 d = int(input('Enter a number to validate division by zero'))
@@ -31,7 +29,7 @@ else:
 
 #Declaring multiple exception
 try:
-    a=10/0
+    #a=10/0
     a=10/'raghu'
     print(a)
 #except ArithmeticError,NameError: - 3.6 does not support
@@ -46,7 +44,7 @@ else:
 #Finally Block
 
 try:
-    a=10/0;
+    #a=10/0;
     a=10/2;
     print(a)
 except ZeroDivisionError:
@@ -92,15 +90,15 @@ class Student(object):
 student = Student(name='Jone', age=23, twitter_url='http://twitter.com/jone')
 print(student)
 
-class InvalidAge(object):
-#class InvalidAge(Exception):
+#class InvalidAge(object):
+class InvalidAge(Exception):
     def __init__(self,data):
      self.data = data
     
     def __str__(self):
-        print('over riding str')
-        #return repr('Invalid Age ' +str(self.data))
-        return 'Invalid age '
+        #print('Invalid Age ',self.data)
+        return repr('Invalid Age ' +str(self.data))
+        #return 'Invalid age '
     '''
     def __repr__(self):
         print('overriding repr')
@@ -133,9 +131,6 @@ class InsufficientBal(Exception):
         self.amt = amt
     def __str__(self):
         return repr('Insufficient balance ' +str(self.amt))
-    
- 
-
     
 class Account():
     def __init__(self,actno,name,mobile,email,idproof):
@@ -219,3 +214,20 @@ print(dir(x))
 
 
 
+class test():
+    def __init__(self,num1,num2):
+        self.num1 = num1
+        self.num2 = num2
+        
+    def __str__(self):
+        msg = "You have entered {} {} ".format(self.num1, self.num2)
+        return msg
+    
+    def __repr__(self):
+        return "from repr"
+
+t = test(10,15)
+print(t)
+str(t)
+repr(t)
+        

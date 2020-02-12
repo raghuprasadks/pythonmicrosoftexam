@@ -33,9 +33,9 @@ print (name*3)
 oldstring = 'I like python'
 newstring = oldstring.replace('like','love')
 print('Replace :',newstring)
+print ('old string ',oldstring)
 print ('old string 1 ',oldstring)
 oldstring = oldstring.replace('like','love')
-print ('old string ',oldstring)
 #Upper and Lower case
 convertlower = 'This Is for LOWER'
 print(newstring.upper())
@@ -66,7 +66,9 @@ y=x.replace("Kaushalya","Python Training")
 print(y)
 print(x)
 #count
-count1 = x.count('a',0,len(x))
+count1 = x.count('a')
+print('count..full length ',count1)
+count1 = x.count('a',0,len(x)-2)
 print('count ',count1)
 test = '123'
 test.isdigit()

@@ -5,6 +5,17 @@
 '''
 Code #1 : Simple demonstration of format().
 '''
+
+greet = 'Say hello'
+name = 'raghu'
+print(greet,name)
+print('{} hello '.format(name))
+
+fname='raghu'
+lname='prasad'
+
+print(' Hello {} {}'.format(fname,lname))
+
 # Python3 program to demonstarte 
 # the str.format() method 
 
@@ -199,7 +210,7 @@ print("{0:4} was founded in {1:16}!"
 	.format("GeeksforGeeks", 2009)) 
 
 # To demonstrate aligning of spaces 
-print("{0:*^16} was founded in {1:#<8}!"
+print("{0:^16} was founded in {1:#<8}!"
 		.format("GeeksforGeeks", 2009)) 
 
 print("{:*^20}".format("Geeks")) 

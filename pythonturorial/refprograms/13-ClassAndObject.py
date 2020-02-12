@@ -31,8 +31,7 @@ class student():
         self.regno = regno
         self.name = name
         self.standard = standard
-        self.section = section
-        
+        self.section = section        
     def information(self):
         print('Regno ',self.regno,' Name ',self.name,' Standard ',self.standard,' Section ',self.section)
         
@@ -52,10 +51,9 @@ newstd = student()
 newstd.register(regno,name,std,sec)
 newstd.information()
    
-class Animal:
+class Animal():
     def eat(self):
-        print('Eating')
-        
+        print('Eating')        
 class Dog(Animal):
     def bark(self):
         print('Barking')
@@ -152,8 +150,8 @@ print('interest from karnataka bank is ',interest)
 bnk = Bank('RBI','Delhi',10)
 bnk.Bank()
 
-import random
 
+import random
 class Account():
     def openAccount(self,name,mobile,email,idproof):
         self.name = name
@@ -165,12 +163,10 @@ class Account():
         return self.accountno    
     def deposit(self,actno,amount):
         self.balance = self.balance + amount
-        return self.balance
-        
+        return self.balance        
     def withdraw(self,actno,amount):
         self.balance = self.balance - amount
-        return self.balance
-    
+        return self.balance    
     def checkBalance(self,actno):
         return self.balance
 
@@ -180,15 +176,12 @@ print('Account no ',actno)
 depamt1 = 10000
 bal = raghuact.deposit(actno,depamt1)
 print('Balance after deposit of ',depamt1, ' is ',bal)
-
 depamt2 = 15000
 bal = raghuact.deposit(actno,depamt2)
 print('Balance after deposit of ',depamt2, ' is ',bal)
-
 withdrawamt1 = 7000
 bal = raghuact.withdraw(actno,withdrawamt1)
 print('Balance after withdrawal of ',withdrawamt1, ' is ',bal)
-
 bal = raghuact.checkBalance(actno)
 print('Checking the balance ',bal)
 
@@ -272,4 +265,92 @@ print('current speed 2',currspeed)
 hero.stop()
 
 
+class student():
+    def __init__(self,regno,name,standard,section,marks):        
+        self.regno = regno
+        self.name = name
+        self.standard = standard
+        self.section = section
+        self.marks = marks        
+    def information(self):
+        print('Regno ',self.regno,' Name ',self.name,' Standard ',self.standard,' Section ',self.section, ' marks : ',self.marks)
 
+
+stud = student(103,'Satvik',10,'A',500)
+
+studlist = []
+noofstudents=int(input("Enter no of students"))
+for n in range(noofstudents):
+    regno = input("enter registration number")
+    name = input("enter name")
+    standard = input("enter standard")
+    section = input("enter section")
+    marks = int(input("enter marks"))
+    stud = student(regno,name,standard,section,marks)
+    studlist.append(stud)
+
+max = 0
+index = 0
+mindex = 0
+for s in studlist:
+    #print(s.information())
+    if (s.marks > max):
+        max = s.marks
+        mindex = index
+        
+    index = index + 1
+
+print('maximum marks ',max)
+print('student scoring maximum marks ',studlist[mindex].name)
+    
+'''
+Method overloading
+'''
+
+class passport():
+    def validdocumentsDOB(self,BC=None,tenthmarkscard=None,aadhar=None):
+        if(BC):            
+            print('You have provided Birth certificate as valid document')            
+        if(tenthmarkscard):
+            print('You have provided Tenth standard marks card as valid document')
+        if(aadhar):            
+            print('You have provided Aadhar standard marks card as valid document')
+        if (BC==None and tenthmarkscard==None and aadhar==None ):
+            print('You have not provided valid document/s')
+    def validdocumentforAddress(self,Telephone,passport,rationcard):
+        print('it is mandaroty')
+
+passportobj = passport()
+passportobj.validdocumentsDOB('BC')
+passportobj.validdocumentsDOB('BC','10 th markscard')
+passportobj.validdocumentsDOB('BC','10 th markscard',909999999)
+passportobj.validdocumentsDOB()
+passportobj.validdocumentforAddress('0000999')
+
+'''
+java
+
+
+class passport():
+    def validdocumentsDOB(self,BC=None):
+        if(BC):            
+            print('You have provided Birth certificate as valid document')            
+        if (BC==None ):
+            print('You have not provided valid document/s')
+
+    def validdocumentsDOB(self,tenthmarkscard=None):
+        if(tenthmarkscard):
+            print('You have provided Tenth standard marks card as valid document')
+        if (BC==None and tenthmarkscard==None and aadhar==None ):
+            print('You have not provided valid document/s')
+
+'''  
+class Calculator ():
+    def add(self,n1,n2):
+        return n1 + n2
+    
+    
+calc = Calculator()
+result = calc.add(100,30)
+print ('Result ',result)
+      

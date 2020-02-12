@@ -31,19 +31,19 @@ Mode	Description
 
 #Writing to a File
 
-f=open("myfile.txt","w")
-f.write("Hello! Learn Python from Kaushalya.tech.Python is fun to code")
+f=open("myfiledemo.txt","w")
+f.write("Hello!! Learn Python from Kaushalya.tech.Python is fun to code")
 f.close()
 
 
 lines=["Hello world.\n", "Welcome to TutorialsTeacher.\n"]
-f=open("myfile.txt","w")
+f=open("myfiledemo.txt","w")
 f.writelines(lines)
 f.close()
 
 
 #Open a file in append mode.
-f= open("myfile.txt","a")
+f= open("myfiledemo.txt","a")
 #print(f)    
 f.write('I am learning python\n')
 f.write('python is easy to learn\n')
@@ -58,7 +58,7 @@ read(chars): reads the specified number of characters starting from the current 
 readlines(): reads all lines until the end of file and returns a list object.
 '''
 
-f=open("myfile.txt","r")
+f=open("myfiledemo.txt","r")
 content=f.read()
 print(content)
 f.close()
@@ -69,10 +69,13 @@ print(line)
 f.close()
 
 f=open("myfile.txt","r")
+print('position before reading ',f.tell())
 line=f.readline()
+print('position after reading one line reading ',f.tell())
 while line!='':
-    print(line)
+    print(line)    
     line=f.readline()
+    print('position after reading one by one line ',f.tell())
 '''
 File iterator
 The file object has an inbuilt iterator. The following program reads the given file line 
@@ -124,13 +127,15 @@ Here, the from parameter takes the following values:
 file.tell() - Returns the file's current position
 '''
 
-f=open("D:\myfile.txt","r+")
+f=open("myfiledemo.txt","r+")
 f.seek(6,0)
 currposition = f.tell()
 print('current position',currposition)
 lines=f.readlines()
 for line in lines:
     print(line)
+    print('postion after every line',f.tell())
+    
 f.close()
 
 f=open("D:\myfile.txt","r+")
